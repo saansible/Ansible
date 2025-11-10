@@ -1,0 +1,14 @@
+---
+- name: Display uptime on servers
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: run  uptime command
+      command: uptime
+      register: uptime_output
+
+    - name: show uptime result
+      debug:
+        msg: "{{ inventory_hostname}} => {{ uptime_output.stdout}}"
