@@ -1,0 +1,21 @@
+# this playbook is use for changing password of local user
+---
+- name: change password of a local user
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  vars:
+    username: gabriel.jalal # replace with a user
+    new_password_hash: 'password' # replace with a password
+
+  tasks:
+    - name: ensure user exists
+      user:
+        name: "{{ username }}"
+        state: present
+
+    - name: change user password for the user
+      user:
+        name: "{{ username }}"
+        password: "{{ new_password_hash }}"
