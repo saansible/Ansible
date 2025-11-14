@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Ansible Playbook') {
             steps {
-                sh 'ansible-playbook uptime.yml'
+                sh 'ansible-playbook -i hosts uptime.yml'
             }
         }
     }
