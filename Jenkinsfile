@@ -1,5 +1,5 @@
 pipeline {
-    agent sa_ansible
+    agent any
 
     stages {
         stage('Checkout') {
