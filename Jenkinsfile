@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'git@github.com:your-org/your-ansible-repo.git'
+                    url: 'https://github.com/saansible/Ansible.git'
             }
         }
 
